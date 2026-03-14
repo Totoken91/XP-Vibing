@@ -17,6 +17,7 @@ const DESKTOP_ICONS = [
   { id: 'wallpaperGallery',label: 'Arrière-plans',    icon: '🖼️', row: 0, col: 1 },
   { id: 'clock',           label: 'Horloge',          icon: '🕐', row: 1, col: 1 },
   { id: 'about',           label: 'À propos',         icon: '💻', row: 2, col: 1 },
+  { id: 'paint',           label: 'Paint',            icon: '🎨', row: 3, col: 1 },
 ];
 
 export default function Desktop() {

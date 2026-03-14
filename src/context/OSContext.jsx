@@ -16,6 +16,7 @@ export const APP_REGISTRY = {
   snake:           { title: 'Serpent XP', icon: '🐍', width: 420, height: 480 },
   minesweeper:     { title: 'Démineur', icon: '💣', width: 320, height: 380 },
   clock:           { title: 'Horloge & Calendrier', icon: '🕐', width: 300, height: 300 },
+  paint:           { title: 'Paint', icon: '🎨', width: 700, height: 560 },
 };
 
 // ── Wallpapers ────────────────────────────────────────────────

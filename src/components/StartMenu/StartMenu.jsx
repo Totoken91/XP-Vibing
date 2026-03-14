@@ -16,6 +16,7 @@ const ALL_PROGRAMS = [
   { id: 'wallpaperGallery', label: 'Arrière-plans',       icon: '🖼️', desc: 'Changer le fond d\'écran' },
   { id: 'clock',            label: 'Horloge',             icon: '🕐', desc: 'Heure & calendrier' },
   { id: 'about',            label: 'À propos',            icon: '💻', desc: 'XP Vibing v2001' },
+  { id: 'paint',            label: 'Paint',               icon: '🎨', desc: 'Dessin et peinture' },
 ];
 
 const PINNED = ['musicPlayer', 'snake', 'fakeBrowser'];

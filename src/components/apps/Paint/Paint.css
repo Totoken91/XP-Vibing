@@ -1,0 +1,307 @@
+/* ── Paint – Windows XP Paint Clone ─────────────────────── */
+
+.paint {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--xp-window-bg);
+  user-select: none;
+  overflow: hidden;
+}
+
+/* ── Menu bar ─────────────────────────────────────── */
+
+.paint-menubar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 4px;
+  background: var(--xp-window-bg);
+  border-bottom: 1px solid #aca899;
+  flex-shrink: 0;
+}
+
+.paint-menu-btn {
+  font-family: var(--font);
+  font-size: 11px;
+  padding: 2px 7px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  color: #000;
+  height: 20px;
+  border-radius: 2px;
+}
+
+.paint-menu-btn:hover {
+  background: var(--xp-highlight);
+  color: #fff;
+  border-color: var(--xp-highlight);
+}
+
+/* ── Body (toolbar + canvas) ────────────────────── */
+
+.paint-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Left toolbar ───────────────────────────────── */
+
+.paint-toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 56px;
+  padding: 4px 2px;
+  background: var(--xp-window-bg);
+  border-right: 1px solid #aca899;
+  gap: 4px;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.paint-tools-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  width: 100%;
+}
+
+.paint-tool-btn {
+  width: 24px;
+  height: 24px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #f5f4ee, #ddd9d0);
+  border: 1px solid;
+  border-color: #fff #808069 #808069 #fff;
+  cursor: pointer;
+  border-radius: 2px;
+  color: #000;
+  padding: 0;
+  line-height: 1;
+}
+
+.paint-tool-btn:hover {
+  background: linear-gradient(180deg, #fff, #ece9e0);
+  border-color: #316ac5 #1e3d8a #1e3d8a #316ac5;
+}
+
+.paint-tool-btn.active {
+  background: linear-gradient(180deg, #d4d0c8, #b8b5ae);
+  border-color: #808069 #fff #fff #808069;
+  box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.paint-toolbar-divider {
+  width: 80%;
+  height: 1px;
+  background: #aca899;
+  flex-shrink: 0;
+}
+
+/* ── Brush sizes ────────────────────────────────── */
+
+.paint-sizes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  align-items: center;
+}
+
+.paint-size-btn {
+  width: 46px;
+  height: 18px;
+  background: linear-gradient(180deg, #f5f4ee, #ddd9d0);
+  border: 1px solid;
+  border-color: #fff #808069 #808069 #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  padding: 0;
+}
+
+.paint-size-btn:hover {
+  border-color: #316ac5 #1e3d8a #1e3d8a #316ac5;
+}
+
+.paint-size-btn.active {
+  background: linear-gradient(180deg, #d4d0c8, #b8b5ae);
+  border-color: #808069 #fff #fff #808069;
+}
+
+.paint-size-dot {
+  display: block;
+  border-radius: 50%;
+  background: #000;
+}
+
+/* ── Active colors ──────────────────────────────── */
+
+.paint-active-colors {
+  position: relative;
+  width: 42px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
+.paint-color-bg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 0 #fff, 2px 2px 0 #808069;
+  cursor: pointer;
+}
+
+.paint-color-fg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #000;
+  box-shadow: 1px 1px 0 #fff, 2px 2px 0 #808069;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* ── Canvas area ────────────────────────────────── */
+
+.paint-canvas-area {
+  flex: 1;
+  overflow: auto;
+  background: #808080;
+  padding: 8px;
+}
+
+.paint-canvas-scroll {
+  display: inline-block;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.paint-canvas-wrapper {
+  position: relative;
+  display: inline-block;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+
+.paint-canvas {
+  display: block;
+}
+
+.paint-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* ── Bottom bar ─────────────────────────────────── */
+
+.paint-bottom {
+  flex-shrink: 0;
+  border-top: 1px solid #aca899;
+  background: var(--xp-window-bg);
+}
+
+.paint-palette-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-bottom: 1px solid #aca899;
+}
+
+.paint-palette {
+  display: flex;
+  flex-wrap: wrap;
+  width: 256px;
+  gap: 1px;
+  flex-shrink: 0;
+}
+
+.paint-swatch {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #808069;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.paint-swatch:hover {
+  border-color: #000;
+  transform: scale(1.2);
+  z-index: 1;
+  position: relative;
+}
+
+/* ── Quick actions ──────────────────────────────── */
+
+.paint-quick-actions {
+  display: flex;
+  gap: 3px;
+  margin-left: auto;
+}
+
+.paint-action-btn {
+  font-size: 13px;
+  width: 26px;
+  height: 24px;
+  background: linear-gradient(180deg, #f5f4ee, #ddd9d0);
+  border: 1px solid;
+  border-color: #fff #808069 #808069 #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.paint-action-btn:hover {
+  background: linear-gradient(180deg, #fff, #ece9e0);
+  border-color: #316ac5 #1e3d8a #1e3d8a #316ac5;
+}
+
+.paint-action-btn:active {
+  background: linear-gradient(180deg, #d4d0c8, #ece9d8);
+  border-color: #808069 #fff #fff #808069;
+}
+
+/* ── Status bar ─────────────────────────────────── */
+
+.paint-statusbar {
+  display: flex;
+  align-items: center;
+  padding: 2px 6px;
+  font-family: var(--font);
+  font-size: 10px;
+  color: #444;
+  gap: 4px;
+}
+
+.paint-status-item {
+  padding: 1px 6px;
+  border: 1px solid;
+  border-color: #aca899 #fff #fff #aca899;
+  background: var(--xp-window-bg);
+  height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.paint-status-sep {
+  width: 1px;
+  height: 12px;
+  background: #aca899;
+}

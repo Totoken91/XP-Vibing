@@ -17,6 +17,7 @@ import WallpaperGallery from './components/apps/WallpaperGallery/WallpaperGaller
 import Snake from './components/apps/games/Snake/Snake';
 import Minesweeper from './components/apps/games/Minesweeper/Minesweeper';
 import ClockApp from './components/apps/Clock/Clock';
+import Paint from './components/apps/Paint/Paint';
 
 const APP_COMPONENTS = {
   musicPlayer:     MusicPlayer,
@@ -28,6 +29,7 @@ const APP_COMPONENTS = {
   snake:           Snake,
   minesweeper:     Minesweeper,
   clock:           ClockApp,
+  paint:           Paint,
 };
 
 export default function WindowManager() {
