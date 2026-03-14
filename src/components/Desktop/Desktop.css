@@ -67,18 +67,10 @@
   50% { opacity: 1; transform: scale(1.2); }
 }
 
-/* ── Desktop Icons Grid ──────────────────────────── */
-
-.desktop-icons {
-  display: grid;
-  grid-template-columns: repeat(2, 80px);
-  grid-template-rows: repeat(8, 80px);
-  gap: 4px;
-  padding: 12px 8px;
-  align-content: start;
-}
+/* ── Desktop Icons (absolute positioned, draggable) ─ */
 
 .desktop-icon {
+  position: absolute;
   width: 74px;
   display: flex;
   flex-direction: column;
@@ -89,6 +81,7 @@
   cursor: default;
   outline: none;
   transition: none;
+  user-select: none;
 }
 
 .desktop-icon:hover .icon-image {

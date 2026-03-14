@@ -1,38 +1,42 @@
 /**
- * DesktopIcon – A single desktop icon with double-click to open.
+ * DesktopIcon – Absolutely positioned desktop icon with double-click to open.
  */
 
 import React, { useState, useRef, useCallback } from 'react';
 import './Desktop.css';
 
-export default function DesktopIcon({ id, label, icon, onOpen }) {
+export default function DesktopIcon({ id, label, icon, position, onOpen, onMouseDown }) {
   const [selected, setSelected] = useState(false);
-  const clickTimeout = useRef(null);
-  const clickCount = useRef(0);
+  const clickCount  = useRef(0);
+  const clickTimer  = useRef(null);
 
   const handleClick = useCallback((e) => {
     e.stopPropagation();
-    clickCount.current += 1;
     setSelected(true);
+    clickCount.current += 1;
 
     if (clickCount.current === 1) {
-      clickTimeout.current = setTimeout(() => {
+      clickTimer.current = setTimeout(() => {
         clickCount.current = 0;
       }, 300);
     } else if (clickCount.current >= 2) {
-      clearTimeout(clickTimeout.current);
+      clearTimeout(clickTimer.current);
       clickCount.current = 0;
       onOpen();
     }
   }, [onOpen]);
 
-  const handleBlur = useCallback(() => {
-    setSelected(false);
-  }, []);
+  const handleMouseDown = useCallback((e) => {
+    onMouseDown?.(e);
+  }, [onMouseDown]);
+
+  const handleBlur = useCallback(() => setSelected(false), []);
 
   return (
     <div
-      className={`desktop-icon ${selected ? 'selected' : ''}`}
+      className={`desktop-icon${selected ? ' selected' : ''}`}
+      style={{ left: position.x, top: position.y }}
+      onMouseDown={handleMouseDown}
       onClick={handleClick}
       onBlur={handleBlur}
       tabIndex={0}
