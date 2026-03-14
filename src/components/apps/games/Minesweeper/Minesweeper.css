@@ -1,0 +1,150 @@
+/* ── Minesweeper ─────────────────────────────────── */
+
+.minesweeper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #c0c0c0;
+  padding: 6px;
+  gap: 4px;
+  font-family: var(--font);
+}
+
+/* ── Header ──────────────────────────────────────── */
+
+.ms-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  background: #c0c0c0;
+  border: 3px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  outline: 2px solid #000;
+}
+
+.ms-counter {
+  display: flex;
+  background: #000;
+  padding: 2px 4px;
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  gap: 1px;
+}
+
+.ms-digit {
+  display: block;
+  width: 13px;
+  height: 23px;
+  line-height: 23px;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ff0000;
+  text-shadow: 0 0 4px rgba(255,0,0,0.5);
+}
+
+.ms-smiley-btn {
+  width: 28px;
+  height: 28px;
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  outline: 1px solid #000;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.08s;
+}
+
+.ms-smiley-btn:hover {
+  background: #d4d0c8;
+}
+
+.ms-smiley-btn:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+/* ── Board ───────────────────────────────────────── */
+
+.ms-board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  border: 3px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  outline: 2px solid #000;
+  flex: 1;
+  min-height: 0;
+}
+
+.ms-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: default;
+  width: 100%;
+  aspect-ratio: 1;
+  border: none;
+  background: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.ms-cell-hidden {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  cursor: pointer;
+}
+
+.ms-cell-hidden:hover {
+  background: #d4d0c8;
+}
+
+.ms-cell-hidden:active {
+  border-color: #808080 #c0c0c0 #c0c0c0 #808080;
+  background: #c0c0c0;
+}
+
+.ms-cell-revealed {
+  background: #c0c0c0;
+  border: 1px solid #808080;
+  font-size: 12px;
+}
+
+.ms-cell-mine {
+  background: #c0c0c0;
+  border: 1px solid #808080;
+  font-size: 14px;
+}
+
+.ms-cell-exploded {
+  background: #ff0000;
+  border: 1px solid #808080;
+  font-size: 14px;
+}
+
+.ms-cell-flagged {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ── Status bar ──────────────────────────────────── */
+
+.ms-statusbar {
+  font-size: 10px;
+  color: #444;
+  text-align: center;
+  border: 1px inset #808080;
+  background: #c8c4bc;
+  padding: 2px;
+}

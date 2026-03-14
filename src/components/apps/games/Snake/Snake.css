@@ -1,0 +1,150 @@
+/* ── Snake Game ──────────────────────────────────── */
+
+.snake-app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0a1a0a;
+  color: #00cc66;
+  font-family: 'Courier New', Courier, monospace;
+  user-select: none;
+}
+
+.snake-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: linear-gradient(180deg, #0f2a0f, #0a1a0a);
+  border-bottom: 2px solid #003300;
+  flex-shrink: 0;
+}
+
+.snake-score-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.snake-score-label {
+  font-size: 9px;
+  color: #00663399;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.snake-score-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #00ff88;
+  text-shadow: 0 0 8px rgba(0,255,136,0.5);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+}
+
+.snake-status-center {
+  font-size: 12px;
+  color: #00aa55;
+  text-align: center;
+}
+
+.snake-dead {
+  color: #ff4444;
+  animation: deadFlash 0.4s step-end infinite;
+}
+
+@keyframes deadFlash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Canvas */
+.snake-canvas-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #0a1a0a;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.snake-canvas {
+  border: 2px solid #003300;
+  box-shadow: 0 0 20px rgba(0,100,0,0.3), inset 0 0 30px rgba(0,0,0,0.5);
+  display: block;
+  image-rendering: pixelated;
+}
+
+/* Overlay */
+.snake-overlay {
+  position: absolute;
+  inset: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: rgba(0,10,0,0.85);
+  border: 1px solid #003300;
+}
+
+.snake-overlay-pause {
+  background: rgba(0,10,0,0.6);
+}
+
+.snake-overlay-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00ff88;
+  text-shadow: 0 0 12px rgba(0,255,136,0.6);
+  text-align: center;
+}
+
+.snake-overlay-score {
+  font-size: 18px;
+  color: #00cc66;
+}
+
+.snake-overlay-hint {
+  font-size: 11px;
+  color: #00663399;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.snake-play-btn {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #00ff88;
+  background: transparent;
+  border: 2px solid #00ff88;
+  padding: 8px 28px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.15s, box-shadow 0.15s;
+  text-shadow: 0 0 6px rgba(0,255,136,0.5);
+  box-shadow: 0 0 8px rgba(0,255,136,0.2);
+  letter-spacing: 1px;
+}
+
+.snake-play-btn:hover {
+  background: rgba(0,255,136,0.1);
+  box-shadow: 0 0 16px rgba(0,255,136,0.4);
+}
+
+.snake-play-btn:active {
+  transform: scale(0.95);
+}
+
+/* Controls hint */
+.snake-controls-hint {
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 10px;
+  color: #003300aa;
+  border-top: 1px solid #003300;
+  flex-shrink: 0;
+}

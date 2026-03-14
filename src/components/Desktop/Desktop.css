@@ -1,0 +1,137 @@
+/* ── Desktop ─────────────────────────────────────── */
+
+.desktop {
+  position: absolute;
+  inset: 0;
+  bottom: var(--taskbar-height);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Bliss XP classic clouds */
+.bliss-clouds {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background:
+    radial-gradient(ellipse 200px 60px at 20% 40%, rgba(255,255,255,0.8) 0%, transparent 70%),
+    radial-gradient(ellipse 300px 80px at 60% 30%, rgba(255,255,255,0.7) 0%, transparent 70%),
+    radial-gradient(ellipse 150px 50px at 80% 60%, rgba(255,255,255,0.75) 0%, transparent 70%),
+    radial-gradient(ellipse 250px 70px at 40% 70%, rgba(255,255,255,0.6) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Matrix rain overlay */
+.matrix-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.matrix-col {
+  position: absolute;
+  top: -200px;
+  display: flex;
+  flex-direction: column;
+  color: #00ff41;
+  font-family: 'Courier New', monospace;
+  animation: matrixFall linear infinite;
+  text-shadow: 0 0 8px #00ff41;
+}
+
+@keyframes matrixFall {
+  from { transform: translateY(0); opacity: 0.8; }
+  to { transform: translateY(120vh); opacity: 0; }
+}
+
+/* Space stars */
+.space-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* ── Desktop Icons Grid ──────────────────────────── */
+
+.desktop-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 80px);
+  grid-template-rows: repeat(8, 80px);
+  gap: 4px;
+  padding: 12px 8px;
+  align-content: start;
+}
+
+.desktop-icon {
+  width: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 4px;
+  border-radius: 3px;
+  cursor: default;
+  outline: none;
+  transition: none;
+}
+
+.desktop-icon:hover .icon-image {
+  filter: brightness(1.1);
+}
+
+.desktop-icon:hover .icon-label {
+  background: rgba(30, 80, 200, 0.5);
+}
+
+.desktop-icon.selected .icon-image {
+  filter: brightness(0.7) saturate(2) hue-rotate(200deg);
+}
+
+.desktop-icon.selected .icon-label {
+  background: #316ac5;
+  color: #fff;
+}
+
+.desktop-icon:focus .icon-label {
+  outline: 1px dotted rgba(255,255,255,0.8);
+  outline-offset: 1px;
+}
+
+.icon-image {
+  font-size: 36px;
+  line-height: 1;
+  filter: drop-shadow(1px 2px 3px rgba(0,0,0,0.5));
+  transition: filter 0.15s;
+  pointer-events: none;
+}
+
+.icon-label {
+  font-family: var(--font);
+  font-size: 11px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000, 0 0 4px rgba(0,0,0,0.8);
+  padding: 1px 3px;
+  border-radius: 2px;
+  word-break: break-word;
+  line-height: 1.3;
+  max-width: 70px;
+  pointer-events: none;
+  transition: background 0.1s;
+}

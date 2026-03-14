@@ -1,0 +1,175 @@
+/* ── Clock & Calendar ────────────────────────────── */
+
+.clock-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background: var(--xp-window-bg);
+  padding: 10px;
+  font-family: var(--font);
+  overflow-y: auto;
+  gap: 8px;
+}
+
+/* ── Analog Clock ────────────────────────────────── */
+
+.clock-analog-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.clock-face {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f8f8f0, #e8e4d8);
+  border: 3px solid;
+  border-color: #808069 #ffffff #ffffff #808069;
+  outline: 1px solid #aca899;
+  position: relative;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2), inset 1px 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Hour markers */
+.clock-mark {
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  top: 50%;
+  left: 50%;
+  transform-origin: left center;
+}
+
+.clock-mark-inner {
+  position: absolute;
+  right: 4px;
+  width: 4px;
+  height: 3px;
+  background: #333;
+  transform: translateY(-50%);
+}
+
+/* Hands */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 3px;
+}
+
+.hand-hour {
+  width: 4px;
+  height: 32px;
+  background: #222;
+  margin-left: -2px;
+  border-radius: 3px 3px 0 0;
+}
+
+.hand-minute {
+  width: 3px;
+  height: 44px;
+  background: #333;
+  margin-left: -1.5px;
+  border-radius: 2px 2px 0 0;
+}
+
+.hand-second {
+  width: 1.5px;
+  height: 48px;
+  background: #cc0000;
+  margin-left: -0.75px;
+  border-radius: 1px;
+}
+
+.clock-center {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #cc0000;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* ── Digital ─────────────────────────────────────── */
+
+.clock-digital {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.clock-digi-time {
+  font-family: 'Courier New', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: #0a246a;
+  letter-spacing: 3px;
+}
+
+.clock-digi-date {
+  font-size: 11px;
+  color: #555;
+}
+
+.clock-sep {
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #aca899, transparent);
+}
+
+/* ── Calendar ────────────────────────────────────── */
+
+.clock-calendar {
+  width: 100%;
+}
+
+.cal-header {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.cal-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0a246a;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.cal-day-label {
+  text-align: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: #316ac5;
+  padding: 2px 0;
+}
+
+.cal-day {
+  text-align: center;
+  font-size: 11px;
+  color: #333;
+  padding: 3px 1px;
+  border-radius: 2px;
+  cursor: default;
+}
+
+.cal-day:hover {
+  background: #e8f0fc;
+}
+
+.cal-today {
+  background: #316ac5;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 2px;
+}

@@ -1,0 +1,154 @@
+/* =========================================
+   XP Vibing – Animations & Transitions
+   ========================================= */
+
+/* Boot screen */
+@keyframes bootFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bootBarFill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes bootSlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bootFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Window animations */
+@keyframes windowOpen {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes windowClose {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.7); opacity: 0; }
+}
+
+@keyframes windowMinimize {
+  0% { transform: scaleY(1) translateY(0); opacity: 1; }
+  100% { transform: scaleY(0) translateY(100%); opacity: 0; }
+}
+
+/* Desktop icon hover */
+@keyframes iconHover {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* Start menu slide */
+@keyframes startMenuSlide {
+  from {
+    transform: translateY(10px) scaleY(0.95);
+    opacity: 0;
+    transform-origin: bottom left;
+  }
+  to {
+    transform: translateY(0) scaleY(1);
+    opacity: 1;
+    transform-origin: bottom left;
+  }
+}
+
+/* Taskbar button pulse */
+@keyframes taskbarPulse {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Notification slide in */
+@keyframes notifSlideIn {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes notifSlideOut {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(100px); opacity: 0; }
+}
+
+/* Blinking cursor for terminal/notepad */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Progress bar segments */
+@keyframes progressSegment {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+/* Visualizer bar dance */
+@keyframes visualizerBounce {
+  0%, 100% { transform: scaleY(0.2); }
+  50% { transform: scaleY(1); }
+}
+
+/* Snake food pulse */
+@keyframes foodPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Minesweeper cell press */
+@keyframes cellPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* Icon selection flicker */
+@keyframes selectFlicker {
+  0% { filter: brightness(1.2) saturate(1.5); }
+  100% { filter: brightness(0.9) saturate(2); }
+}
+
+/* Clock digit flip */
+@keyframes digitFlip {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+/* Wallpaper fade */
+@keyframes wallpaperFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Tooltip appear */
+@keyframes tooltipAppear {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* General utility */
+.anim-window-open { animation: windowOpen 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.anim-window-close { animation: windowClose 0.18s ease-in forwards; }
+.anim-window-minimize { animation: windowMinimize 0.18s ease-in forwards; }
+.anim-start-menu { animation: startMenuSlide 0.18s ease-out forwards; }
+.anim-notif-in { animation: notifSlideIn 0.25s ease-out forwards; }
+.anim-notif-out { animation: notifSlideOut 0.25s ease-in forwards; }
+.anim-wallpaper { animation: wallpaperFade 0.5s ease forwards; }

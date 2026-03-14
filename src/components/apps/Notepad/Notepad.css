@@ -1,0 +1,83 @@
+/* ── Notepad ─────────────────────────────────────── */
+
+.notepad {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--xp-window-bg);
+}
+
+.np-menubar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 6px;
+  background: var(--xp-window-bg);
+  border-bottom: 1px solid #aca899;
+  flex-shrink: 0;
+}
+
+.np-menu-btn {
+  font-family: var(--font);
+  font-size: 11px;
+  padding: 2px 8px;
+  background: linear-gradient(180deg, #f5f4ee, #ddd9d0);
+  border: 1px solid;
+  border-color: #fff #808069 #808069 #fff;
+  outline: 1px solid #0a246a;
+  cursor: pointer;
+  color: #000;
+  height: 22px;
+}
+
+.np-menu-btn:hover {
+  background: linear-gradient(180deg, #fff, #ece9e0);
+  border-color: #316ac5 #1e3d8a #1e3d8a #316ac5;
+  outline-color: #316ac5;
+}
+
+.np-menu-btn:active {
+  background: linear-gradient(180deg, #d4d0c8, #ece9d8);
+  border-color: #808069 #fff #fff #808069;
+}
+
+.np-unsaved {
+  font-family: var(--font);
+  font-size: 10px;
+  color: #c44;
+  margin-left: 8px;
+}
+
+.np-textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #000;
+  background: #fff;
+  border-top: 1px solid #aca899;
+  white-space: pre-wrap;
+}
+
+.np-statusbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 8px;
+  background: var(--xp-window-bg);
+  border-top: 1px solid #aca899;
+  font-family: var(--font);
+  font-size: 10px;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.np-saved-state {
+  margin-left: auto;
+  color: #488;
+  font-size: 10px;
+}
