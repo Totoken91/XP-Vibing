@@ -29,7 +29,7 @@ export const WALLPAPERS = [
 ];
 
 export const WALLPAPER_STYLES = {
-  bliss: `url('/Vibing/bliss.jpeg')`,
+  bliss: `url('/bliss.jpeg')`,
   y2k: `
     radial-gradient(circle at 70% 30%, rgba(0,200,255,0.4) 0%, transparent 50%),
     radial-gradient(circle at 20% 80%, rgba(100,0,255,0.3) 0%, transparent 40%),
