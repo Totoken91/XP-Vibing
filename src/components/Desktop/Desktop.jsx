@@ -21,6 +21,7 @@ const DESKTOP_ICONS = [
   { id: 'clock',           label: 'Horloge',       icon: '🕐' },
   { id: 'about',           label: 'À propos',      icon: '💻' },
   { id: 'paint',           label: 'Paint',         icon: '🎨' },
+  { id: 'alex',            label: 'Alex',          icon: '👤' },
 ];
 
 function defaultPositions() {
